@@ -1,10 +1,10 @@
 #am
-def remove_invalid_chars(user_isbn)
-	user_isbn = user_isbn.gsub("-", "") #this strips the dashes from isbn and redefines it without them
-	user_isbn = user_isbn.gsub(" ", "") #this strips the whitespace and redifines isbn by using the !. remember ! is permenantish
-	user_isbn = user_isbn.gsub(/[^0-9,^x,.]/, "")	#allows 0-9, x; periods are not allowed
-	p user_isbn
-end
+
+
+
+# def remove_invalid_chars(user_isbn)
+	
+# end
 
 def get_isbn_array_count(user_isbn)
 	isbn_array = user_isbn.split("") {
@@ -32,6 +32,9 @@ def check_string_length(user_isbn)
 end
 
 def run_program(user_isbn)
+	user_isbn = user_isbn.gsub("-", "") #this strips the dashes from isbn and redefines it without them
+	user_isbn = user_isbn.gsub(" ", "") #this strips the whitespace and redifines isbn by using the !. remember ! is permenantish
+	user_isbn = user_isbn.gsub(/[^0-9,^x,.]/, "")	#allows 0-9, x; periods are not allowed
 	if check_string_length(user_isbn) == "ten"
 		figure_validity(user_isbn)
 	elsif check_string_length(user_isbn) == "thirteen"
@@ -130,7 +133,6 @@ end
 def user_isbn()
 puts "What is your isbn number?"
 user_isbn = gets.chomp
-remove_invalid_chars(user_isbn)
 run_program(user_isbn)
 
 end
